@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Bar_Order_AppApp: App {
+    @StateObject var ViewChanger = viewChanger()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(ViewChanger: viewChanger())
         }
     }
 }

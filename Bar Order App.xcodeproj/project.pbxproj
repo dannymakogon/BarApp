@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		08A44246263771E6007E5391 /* Bar_Order_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A44245263771E6007E5391 /* Bar_Order_AppApp.swift */; };
-		08A44248263771E6007E5391 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A44247263771E6007E5391 /* ContentView.swift */; };
 		08A4424A263771E6007E5391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A44249263771E6007E5391 /* Assets.xcassets */; };
 		08A4424D263771E6007E5391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A4424C263771E6007E5391 /* Preview Assets.xcassets */; };
 		08A44258263771E7007E5391 /* Bar_Order_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A44257263771E7007E5391 /* Bar_Order_AppTests.swift */; };
 		08A44263263771E7007E5391 /* Bar_Order_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A44262263771E7007E5391 /* Bar_Order_AppUITests.swift */; };
+		08A442712637727F007E5391 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A442702637727F007E5391 /* LoginScreen.swift */; };
+		08A4427326377740007E5391 /* OrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4427226377740007E5391 /* OrderScreen.swift */; };
+		08A4427526377AD8007E5391 /* GuestSignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4427426377AD8007E5391 /* GuestSignInScreen.swift */; };
+		08A4427726377E9A007E5391 /* AdminLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4427626377E9A007E5391 /* AdminLoginScreen.swift */; };
+		08A44279263782C7007E5391 /* PageCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A44278263782C7007E5391 /* PageCase.swift */; };
+		08A4427B263782F6007E5391 /* ViewChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4427A263782F6007E5391 /* ViewChanger.swift */; };
+		08A4427D263783EE007E5391 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4427C263783EE007E5391 /* MainView.swift */; };
+		08A4427F26378CF8007E5391 /* AdminScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A4427E26378CF8007E5391 /* AdminScreen.swift */; };
+		08A442812637A52A007E5391 /* CustomDrinkScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A442802637A52A007E5391 /* CustomDrinkScreen.swift */; };
+		08A442832637ACF7007E5391 /* StockScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A442822637ACF7007E5391 /* StockScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +44,6 @@
 /* Begin PBXFileReference section */
 		08A44242263771E6007E5391 /* Bar Order App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bar Order App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A44245263771E6007E5391 /* Bar_Order_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar_Order_AppApp.swift; sourceTree = "<group>"; };
-		08A44247263771E6007E5391 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		08A44249263771E6007E5391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A4424C263771E6007E5391 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		08A4424E263771E6007E5391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +53,16 @@
 		08A4425E263771E7007E5391 /* Bar Order AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bar Order AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A44262263771E7007E5391 /* Bar_Order_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar_Order_AppUITests.swift; sourceTree = "<group>"; };
 		08A44264263771E7007E5391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A442702637727F007E5391 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		08A4427226377740007E5391 /* OrderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderScreen.swift; sourceTree = "<group>"; };
+		08A4427426377AD8007E5391 /* GuestSignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestSignInScreen.swift; sourceTree = "<group>"; };
+		08A4427626377E9A007E5391 /* AdminLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginScreen.swift; sourceTree = "<group>"; };
+		08A44278263782C7007E5391 /* PageCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCase.swift; sourceTree = "<group>"; };
+		08A4427A263782F6007E5391 /* ViewChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChanger.swift; sourceTree = "<group>"; };
+		08A4427C263783EE007E5391 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		08A4427E26378CF8007E5391 /* AdminScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminScreen.swift; sourceTree = "<group>"; };
+		08A442802637A52A007E5391 /* CustomDrinkScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrinkScreen.swift; sourceTree = "<group>"; };
+		08A442822637ACF7007E5391 /* StockScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +113,19 @@
 		08A44244263771E6007E5391 /* Bar Order App */ = {
 			isa = PBXGroup;
 			children = (
+				08A442702637727F007E5391 /* LoginScreen.swift */,
 				08A44245263771E6007E5391 /* Bar_Order_AppApp.swift */,
-				08A44247263771E6007E5391 /* ContentView.swift */,
 				08A44249263771E6007E5391 /* Assets.xcassets */,
 				08A4424E263771E6007E5391 /* Info.plist */,
+				08A4427226377740007E5391 /* OrderScreen.swift */,
+				08A4427426377AD8007E5391 /* GuestSignInScreen.swift */,
+				08A4427626377E9A007E5391 /* AdminLoginScreen.swift */,
+				08A44278263782C7007E5391 /* PageCase.swift */,
+				08A4427A263782F6007E5391 /* ViewChanger.swift */,
+				08A4427C263783EE007E5391 /* MainView.swift */,
+				08A4427E26378CF8007E5391 /* AdminScreen.swift */,
+				08A442802637A52A007E5391 /* CustomDrinkScreen.swift */,
+				08A442822637ACF7007E5391 /* StockScreen.swift */,
 				08A4424B263771E6007E5391 /* Preview Content */,
 			);
 			path = "Bar Order App";
@@ -259,8 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A44248263771E6007E5391 /* ContentView.swift in Sources */,
+				08A44279263782C7007E5391 /* PageCase.swift in Sources */,
+				08A4427D263783EE007E5391 /* MainView.swift in Sources */,
 				08A44246263771E6007E5391 /* Bar_Order_AppApp.swift in Sources */,
+				08A442832637ACF7007E5391 /* StockScreen.swift in Sources */,
+				08A442712637727F007E5391 /* LoginScreen.swift in Sources */,
+				08A4427526377AD8007E5391 /* GuestSignInScreen.swift in Sources */,
+				08A4427B263782F6007E5391 /* ViewChanger.swift in Sources */,
+				08A4427326377740007E5391 /* OrderScreen.swift in Sources */,
+				08A442812637A52A007E5391 /* CustomDrinkScreen.swift in Sources */,
+				08A4427F26378CF8007E5391 /* AdminScreen.swift in Sources */,
+				08A4427726377E9A007E5391 /* AdminLoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Order App/Preview Content\"";
+				DEVELOPMENT_TEAM = UUYKF574A7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Bar Order App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +477,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Order App/Preview Content\"";
+				DEVELOPMENT_TEAM = UUYKF574A7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Bar Order App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
