@@ -81,11 +81,11 @@ struct OrderScreen: View {
                         }
                         ).disabled(!order.isValid())
                     }
-                }
+                }.navigationBarTitle("Drink Order")
             }
             Spacer()
         }.alert(isPresented: $confirmOrderAlert) { () -> Alert in
-            Alert(title: Text("Ready to order "), message: Text("You're about to order"),
+            Alert(title: Text("Ready to order "), message: Text("You're about to order "),
                   primaryButton: .default (Text("OK")) {
                     //mark as unavialable to user
                     //print(ViewChanger.$currentPage)

@@ -6,11 +6,25 @@
 //
 
 //MAKE TOGGLING WORK
-
+import Combine
 import SwiftUI
+
+class Inventory: ObservableObject{
+    var didChange = PassthroughSubject<Void,Never>()
+    
+    @Published var drink1Available = true {didSet {update()} }
+    @Published var drink2Available = true {didSet {update()} }
+    @Published var drink3Available = true {didSet {update()} }
+    
+    
+    func update() {
+        didChange.send()
+    }
+}
 
 struct StockScreen: View {
     @StateObject var ViewChanger: viewChanger
+    @ObservedObject var inventory = Inventory()
     @State private var confirmLogoutAlert = false
     @State private var confirmLogout = false
     @State private var outOfStockDrink = ""
@@ -23,78 +37,51 @@ struct StockScreen: View {
                 Button(action: {
                     ViewChanger.currentPage = .AdminScreen
                 }, label: {
-                Image(systemName: "arrowshape.turn.up.backward")
-                    .font(.system(size: 30))
-                    .foregroundColor(.blue)
+                    Image(systemName: "arrowshape.turn.up.backward")
+                        .font(.system(size: 30))
+                        .foregroundColor(.blue)
                 })
-            Text("Bar App")
-                .font(.system(size: 32, weight: .medium, design: .default))
-                .foregroundColor(.black)
-                .padding()
+                Text("Bar App")
+                    .font(.system(size: 32, weight: .medium, design: .default))
+                    .foregroundColor(.black)
+                    .padding()
                 Spacer()
                 
             }
-            Text("Inventory")
             Spacer()
-            Text("Whats out of stock?")
-                .underline()
-                .font(.system(size: 32, weight: .medium, design: .default))
-            Spacer()
-            VStack (spacing: 50){
-            Button(action: {
-                print("First Drink out of stock")
-                self.confirmLogoutAlert = true
-                outOfStockDrink = "Drink 1"
-                outOfStock1 = true
-            }, label: {
-                if (!outOfStock1){
-                Image(systemName: "1.square.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.blue)
-                }else{
-                    Image(systemName: "1.square.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(.red)
-                }
+            NavigationView{
+                Form{
+                    
+                    Toggle(isOn: $inventory.drink1Available){
+                            Text("Drink 1")
+                        
+                    }
+                    Toggle(isOn: $inventory.drink2Available){
+                        Text("Drink 2")
+                    }
+                    Toggle(isOn: $inventory.drink3Available){
+                        Text("Drink 3")
+                    }
+                    
+                    Button("Update Inventory", action: {
+                        if (!inventory.drink1Available){
+                            print("Drink 1 no longer available")
+                        }
+                        if (!inventory.drink2Available){
+                            print("Drink 2 no longer available")
+                        }
+                        if (!inventory.drink3Available){
+                            print("Drink 3 no longer available")
+                        }
+                        if (inventory.drink1Available && inventory.drink2Available && inventory.drink3Available){
+                            print("All Drinks Available")
+                        }
+                        //send this to URL
+                    }
+                    )
+                }.navigationBarTitle("Inventory")
+                
             }
-            )
-            
-            Button(action: {
-                print("Second Drink out of stock")
-                self.confirmLogoutAlert = true
-                outOfStockDrink = "Drink 2"
-                outOfStock2 = true
-            }, label: {
-                if (!outOfStock2){
-                Image(systemName: "2.square.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.blue)
-                }else {
-                    Image(systemName: "2.square.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(.red)
-                }
-            }
-            )
-            Button(action: {
-                print("Third drink out of stock")
-                self.confirmLogoutAlert = true
-                outOfStockDrink = "Drink 3"
-                outOfStock3 = true
-            }, label: {
-                if (!outOfStock3){
-                Image(systemName: "3.square.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.blue)
-                } else {
-                    Image(systemName: "3.square.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(.red)
-                }
-            }
-            )
-            }
-            Spacer()
             
         }.alert(isPresented: $confirmLogoutAlert) { () -> Alert in
             Alert(title: Text("Confirm Change"), message: Text(outOfStockDrink + " is about to be marked as Sold Out"),
