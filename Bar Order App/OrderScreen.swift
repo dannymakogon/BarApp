@@ -34,6 +34,7 @@ class Order: ObservableObject{
 struct OrderScreen: View {
     @ObservedObject var order = Order()
     @StateObject var ViewChanger: viewChanger
+    @State private var confirmOrderAlert = false
     @State private var success = false
     @State private var message = ""
     @StateObject var user: User
@@ -74,6 +75,7 @@ struct OrderScreen: View {
                     Section{
                         Button(action: {
                             print("Ordered")
+                            confirmOrderAlert = true
                         }, label: {
                             Text("Place Order")
                         }
@@ -82,7 +84,14 @@ struct OrderScreen: View {
                 }
             }
             Spacer()
-        }
+        }.alert(isPresented: $confirmOrderAlert) { () -> Alert in
+            Alert(title: Text("Ready to order "), message: Text("You're about to order"),
+                  primaryButton: .default (Text("OK")) {
+                    //mark as unavialable to user
+                    //print(ViewChanger.$currentPage)
+                  }, secondaryButton: .cancel()
+            )
+            }
         
         
     }
