@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject var ViewChanger: viewChanger
     @State var currentPage : Page = .LoginScreen
+    @StateObject var user = User()
     var body: some View {
         switch ViewChanger.currentPage {
         case .LoginScreen:
@@ -18,10 +19,10 @@ struct MainView: View {
             AdminLoginScreen(ViewChanger: ViewChanger)
                 .animation(.spring())
         case .GuestSignInScreen:
-            GuestSignInScreen(ViewChanger: ViewChanger)
+            GuestSignInScreen(user: User(), ViewChanger: ViewChanger)
                 .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
         case .OrderScreen:
-            OrderScreen(ViewChanger: ViewChanger)
+            OrderScreen(ViewChanger: ViewChanger, user: User())
         case .AdminScreen:
             AdminScreen(ViewChanger: ViewChanger)
         case .CustomDrinkScreen:

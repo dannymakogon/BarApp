@@ -23,7 +23,7 @@ VStack{
     VStack{
         Button("Guest", action: {
             print("Clicked Login As Guest")
-            ViewChanger.currentPage = .GuestSignInScreen
+            ViewChanger.currentPage = .OrderScreen
         }
         )
         .frame(width: 150, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

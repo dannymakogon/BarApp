@@ -4,10 +4,11 @@
 //
 //  Created by Danny Makogon on 4/26/21.
 //
-
+import Combine
 import SwiftUI
 
 struct GuestSignInScreen: View {
+    @StateObject var user: User
     @StateObject var ViewChanger: viewChanger
     @State private var username = ""
     @State private var alert = ""
@@ -39,7 +40,9 @@ struct GuestSignInScreen: View {
                 .shadow(radius: 8)
             Button("Sign In", action:{
                 if (!username.isEmpty){
-                    print("User's name: " + username)
+                    
+                    user.username = username
+                    print("User's name: " + user.username)
                     ViewChanger.currentPage = .OrderScreen
                 }
                 else{
@@ -56,9 +59,11 @@ struct GuestSignInScreen: View {
         }
     }
 }
-
+#if DEBUG
+let userData = User()
 struct GuestSignInScreen_Previews: PreviewProvider {
     static var previews: some View {
-        GuestSignInScreen(ViewChanger: viewChanger())
+        GuestSignInScreen(user: User(), ViewChanger: viewChanger())
     }
 }
+#endif

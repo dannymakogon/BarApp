@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082F1F902638C78500D761C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082F1F8F2638C78500D761C1 /* User.swift */; };
 		08A44246263771E6007E5391 /* Bar_Order_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A44245263771E6007E5391 /* Bar_Order_AppApp.swift */; };
 		08A4424A263771E6007E5391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A44249263771E6007E5391 /* Assets.xcassets */; };
 		08A4424D263771E6007E5391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A4424C263771E6007E5391 /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082F1F8F2638C78500D761C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		08A44242263771E6007E5391 /* Bar Order App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bar Order App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A44245263771E6007E5391 /* Bar_Order_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar_Order_AppApp.swift; sourceTree = "<group>"; };
 		08A44249263771E6007E5391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				08A442802637A52A007E5391 /* CustomDrinkScreen.swift */,
 				08A442822637ACF7007E5391 /* StockScreen.swift */,
 				08A4424B263771E6007E5391 /* Preview Content */,
+				082F1F8F2638C78500D761C1 /* User.swift */,
 			);
 			path = "Bar Order App";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				08A4427526377AD8007E5391 /* GuestSignInScreen.swift in Sources */,
 				08A4427B263782F6007E5391 /* ViewChanger.swift in Sources */,
 				08A4427326377740007E5391 /* OrderScreen.swift in Sources */,
+				082F1F902638C78500D761C1 /* User.swift in Sources */,
 				08A442812637A52A007E5391 /* CustomDrinkScreen.swift in Sources */,
 				08A4427F26378CF8007E5391 /* AdminScreen.swift in Sources */,
 				08A4427726377E9A007E5391 /* AdminLoginScreen.swift in Sources */,
