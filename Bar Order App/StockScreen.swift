@@ -16,6 +16,8 @@ class Inventory: ObservableObject{
     @Published var drink2Available = true {didSet {update()} }
     @Published var drink3Available = true {didSet {update()} }
     
+    @Published var updateOrderAlert = false { didSet {update() } }
+    
     
     func update() {
         didChange.send()
@@ -62,29 +64,31 @@ struct StockScreen: View {
                     Toggle(isOn: $inventory.drink3Available){
                         Text("Drink 3")
                     }
-                    
-                    Button("Update Inventory", action: {
-                        if (!inventory.drink1Available){
-                            print("Drink 1 no longer available")
+                    Section{
+                        Button("Update Inventory", action: {
+                            if (!inventory.drink1Available){
+                                print("Drink 1 no longer available")
+                            }
+                            if (!inventory.drink2Available){
+                                print("Drink 2 no longer available")
+                            }
+                            if (!inventory.drink3Available){
+                                print("Drink 3 no longer available")
+                            }
+                            if (inventory.drink1Available && inventory.drink2Available && inventory.drink3Available){
+                                print("All Drinks Available")
+                            }
+                            inventory.updateOrderAlert = true
+                            //send this to URL
                         }
-                        if (!inventory.drink2Available){
-                            print("Drink 2 no longer available")
-                        }
-                        if (!inventory.drink3Available){
-                            print("Drink 3 no longer available")
-                        }
-                        if (inventory.drink1Available && inventory.drink2Available && inventory.drink3Available){
-                            print("All Drinks Available")
-                        }
-                        //send this to URL
+                        )
                     }
-                    )
                 }.navigationBarTitle("Inventory")
                 
             }
             
-        }.alert(isPresented: $confirmLogoutAlert) { () -> Alert in
-            Alert(title: Text("Confirm Change"), message: Text(outOfStockDrink + " is about to be marked as Sold Out"),
+        }.alert(isPresented: $inventory.updateOrderAlert) { () -> Alert in
+            Alert(title: Text("Confirm Change"),
                   primaryButton: .default (Text("OK")) {
                     //mark as unavialable to user
                     //print(ViewChanger.$currentPage)

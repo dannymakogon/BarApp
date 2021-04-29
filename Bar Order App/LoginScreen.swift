@@ -15,11 +15,8 @@ struct LoginScreen: View {
         //ONE BUTTON
 VStack{
    
-    Text("Bar App")
-        .font(.system(size: 32, weight: .medium, design: .default))
-        .foregroundColor(.black)
-        .padding()
-    Spacer()
+    Image("screen-4")
+        .padding(.bottom, 200)
     VStack{
         Button("Guest", action: {
             print("Clicked Login As Guest")

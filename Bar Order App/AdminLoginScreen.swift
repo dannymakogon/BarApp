@@ -34,12 +34,13 @@ struct AdminLoginScreen: View {
             Text(alert)
                 .foregroundColor(.red)
             TextField("Password", text: $password)
+                .textContentType(.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .frame(width: 325, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.black)
+                .foregroundColor(.blue)
                 .shadow(radius: 8)
-//                .keyboardType(.numberPad)
-//                .textContentType(.password)
+                .keyboardType(.numberPad)
+                
             Button("Log In", action:{
                 if (password == adminPassword){
                     print("Admin Logged In")

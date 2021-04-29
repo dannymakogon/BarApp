@@ -4,11 +4,25 @@
 //
 //  Created by Danny Makogon on 4/26/21.
 //
-
+import Combine
 import SwiftUI
+
+class Orderlist: ObservableObject {
+    var didChange = PassthroughSubject<Void,Never>()
+    
+    @Published var orderNames = ["Danny", "Gavin", "Ethan", "Sam"] { didSet {update()} }
+    @Published var orderDetails = ["Drink 1", "Drink 2", "Drink 3", "Get me as drunk as possible"] {didSet {update()} }
+    @Published var completed = false {didSet {update()} }
+    @Published var completeOrderAlert = false { didSet {update() } }
+    @Published var rejectOrderAlert = false { didSet {update() } }
+    func update() {
+        didChange.send()
+    }
+}
 
 struct AdminScreen: View {
     @StateObject var ViewChanger: viewChanger
+    @ObservedObject var order = Orderlist()
     @State var orderName = ""
     var body: some View {
         VStack{
@@ -21,10 +35,7 @@ struct AdminScreen: View {
                     .foregroundColor(.blue)
                 })
                 Spacer()
-            Text("Bar App")
-                .font(.system(size: 32, weight: .medium, design: .default))
-                .foregroundColor(.black)
-                .padding()
+                Image("screen-4")
                 Spacer()
                 Button(action: {
                     print("Extra")
@@ -35,8 +46,6 @@ struct AdminScreen: View {
                         .foregroundColor(.blue)
                 })
             }
-            Text("Admin Screen")
-                .padding(.bottom, 60)
             
             
                 Text("Incoming Orders")
@@ -45,11 +54,10 @@ struct AdminScreen: View {
                     .frame(alignment: .leading)
             ScrollView (.vertical, showsIndicators: true){
             VStack{ //whole form
-                
-                DannyOrder()
-                GavinsOrder()
-                EthansOrder()
-                SamsOrder()
+                    DannyOrder()
+                    GavinsOrder()
+                    EthansOrder()
+                    SamsOrder()
                 }
                 //end of Vstack
                 .frame(width: 400, alignment: .leading)
